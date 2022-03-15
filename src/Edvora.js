@@ -118,7 +118,6 @@ const Edvora = () => {
         const filteredData = data.filter((rides) => {
             return rides.state === state;
         });
-        console.log("state name inside getfil ", state);
         getFilteredByDist(state);
         //----------------------------------------------
         getNumber(filteredData);
@@ -135,7 +134,6 @@ const Edvora = () => {
         setStateData(filteredData);
         setData(filteredData);
         setState(state);
-        console.log("your data is ", filteredData);
     }
     //----------------------------filtering by city --------------------
     const getFilteredByCity = (city) => {
@@ -145,7 +143,6 @@ const Edvora = () => {
         getNumber(filteredData);
         setStateData(filteredData);
         setData(filteredData);
-        console.log("your data is ", filteredData);
     }
     // ------------filtering data on basis of past date------------------------------
     const getFilteredByDate = (type, name = stateName) => {
@@ -153,13 +150,10 @@ const Edvora = () => {
         let dataToBeFiltered;
         if (name !== "state" && name !== "State") {
             dataToBeFiltered = stateData;
-            console.log("not state ", name);
         }
         else {
-            console.log(" state ", name);
             dataToBeFiltered = data;
         }
-        console.log("unfiltered data is ", data);
         const ans = getNumber(dataToBeFiltered);
         const upcomingDateArray = ans[0];
         const pastDateArray = ans[1];
@@ -169,7 +163,6 @@ const Edvora = () => {
         const filteredData = [];
         // // if type is upcoming
         if (type === "upcoming") {
-            console.log("upcoming is called");
             upcomingDateArray.map((date_diff) => {
 
                 for (let [key, value] of upcomingDateAndId) {
@@ -179,7 +172,6 @@ const Edvora = () => {
                     }
                 }
             });
-            console.log("ordered is ", ordered_id2);
             ordered_id2.forEach((id => {
                 dataToBeFiltered.map((rides) => {
                     if (rides.id === id) {
@@ -189,7 +181,6 @@ const Edvora = () => {
             }));
         }
         else if (type === "past") {
-            console.log("past is called");
             pastDateArray.map((date_diff) => {
 
                 for (let [key, value] of pastDateAndId) {
@@ -199,7 +190,6 @@ const Edvora = () => {
                     }
                 }
             });
-            console.log("ordered is ", ordered_id2);
             ordered_id2.forEach((id => {
                 dataToBeFiltered.map((rides) => {
                     if (rides.id == id) {
@@ -208,7 +198,6 @@ const Edvora = () => {
                 })
             }));
         }
-        console.log("filtered data is ", filteredData);
         if (filteredData.length == 0) {
             toast.info("No rides available", { position: 'top-center' });
         }

@@ -41,13 +41,13 @@ transform: rotate(-0.36deg);
 /* filter csss begins here */
 .filter{
     background-color: rgb(41,41,41);
-    padding:20px 9px;
+    padding:1.3rem 9px;
 }
 .rides{
-margin: 20px;
+margin: 1.3rem;
 color: rgba(255, 255, 255, 1);
 color: #D0CBCB;
-font-size: 18px;
+font-size: 1.2rem;
 cursor: pointer;
 font-style: normal;
 letter-spacing: .4px;
@@ -61,7 +61,7 @@ letter-spacing: .4px;
 /* filter icon */
 
 #filterTitle{
-    font-size: 18px;
+    font-size: 1.1rem;
     position: absolute;
     right: 30px;
     color: white;
@@ -71,7 +71,7 @@ letter-spacing: .4px;
     position: absolute;
     right: 80px;
     /* margin:auto; */
-    font-size: 25px;
+    font-size: 1.6rem;
     color: white;
 }
 /* filter options css begins here */
@@ -120,8 +120,8 @@ input{
 #close{
     color: white;
     position: relative;
-    left: 130px;
-    top: -40px;
+    left: 11rem;
+    top: -2.5rem;
     cursor: pointer;
 
 }
@@ -164,4 +164,24 @@ input{
     background-color: rgb(15,15,15);
     padding:2px 7px;
     border-radius: 20%;
+}
+@media only screen and (max-width:900px) {
+    html{
+    font-size: 13px;
+    }
+}
+@media only screen and (max-width:800px) {
+    html{
+    font-size: 12px;
+    }
+}
+@media only screen and (max-width:700px) {
+    html{
+    font-size: 10px;
+    }
+}
+@media only screen and (max-width:600px) {
+    html{
+    font-size: 8px;
+    }
 }
